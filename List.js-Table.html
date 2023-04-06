@@ -43,6 +43,11 @@
       </thead>
       <tbody class="list">
         <tr>
+          <td class="id"></td>
+          <td class="first_name"></td>
+          <td class="last_name"></td>
+        </tr>
+        <!-- <tr>
           <td class="id">1</td>
           <td class="first_name">Zaria</td>
           <td class="last_name">Fowlestone</td>
@@ -61,7 +66,7 @@
           <td class="id">4</td>
           <td class="first_name">Tiler</td>
           <td class="last_name">Karlolak</td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
@@ -102,11 +107,12 @@
           const products = value.data;
           $.each(products, function (index, product) {
             listjs.add([
-              {id:index, first_name: product.name, last_name: product.quantity},
+              {id:index+1, first_name: product.name, last_name: product.quantity},
             ]);
           });
       })
 
+      listjs.remove("id", 0);
   listjs.on('updated', function(list){
     update_entries_label(list);
   });
