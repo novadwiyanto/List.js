@@ -93,6 +93,7 @@
   };
 
   var listjs = new List('listjs', options);
+  listjs.clear();
   function update_entries_label(listjs) {
     var total_items = listjs.items.length;
     var visible_items = listjs.visibleItems.length;
@@ -112,7 +113,7 @@
           });
       })
 
-      listjs.remove("id", 0);
+      
   listjs.on('updated', function(list){
     update_entries_label(list);
   });
